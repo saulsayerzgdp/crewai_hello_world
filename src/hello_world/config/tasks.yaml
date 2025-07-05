@@ -1,0 +1,6 @@
+hello_world_task:
+  description: >
+    Say hello to the world or to a specific person if a name is provided.
+  expected_output: >
+    A cheerful greeting, e.g., "Hello, World!" or "Hello, {name}!"
+  agent: hello_world_agent
