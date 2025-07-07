@@ -4,3 +4,6 @@ weather_task:
   expected_output: >
     A clear, friendly, and readable weather forecast for the requested city on the requested day.
   agent: weather_agent
+  inputs:
+    - day
+    - city
