@@ -2,10 +2,7 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from crewai_tools import SerperDevTool  # Import Serper tool
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+from .tools import WeatherForecastTool
 
 @CrewBase
 class HelloWorld():
@@ -21,9 +18,9 @@ class HelloWorld():
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
     @agent
-    def research_agent(self) -> Agent:
+    def weather_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config['research_agent'], # type: ignore[index]
+            config=self.agents_config['weather_agent'], # type: ignore[index]
             verbose=True,
             llm='gpt-4.1'
         )
@@ -32,10 +29,10 @@ class HelloWorld():
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
-    def research_task(self) -> Task:
+    def weather_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'], # type: ignore[index]
-            tools=[SerperDevTool()]
+            config=self.tasks_config['weather_task'], # type: ignore[index]
+            tools=[WeatherForecastTool()]
         )
 
     @crew

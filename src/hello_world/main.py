@@ -18,9 +18,8 @@ def run():
     Run the crew.
     """
     inputs = {
-        'name': 'Petry',
-        'topic': 'AI LLMs',
-        'num_of_items': 5
+        'day': 'Monday',
+        'city': 'London'
     }
 
     try:

@@ -1,9 +1,6 @@
-research_task:
+weather_task:
   description: >
-    Use the Serper tool to find the most relevant and recent articles on the topic: {topic}. Return up to {num_of_items} articles, including direct links and concise summaries with citations.
+    Use the weather_forecast_tool to get the weather forecast for the requested day ({day}) for the requested city ({city}).
   expected_output: >
-    A concise, well-cited list of up to {num_of_items} relevant articles or web results, each with a markdown link, brief summary, and citation.
-  agent: research_agent
-  inputs:
-    - topic
-    - num_of_items
+    A clear, friendly, and readable weather forecast for the requested city on the requested day.
+  agent: weather_agent

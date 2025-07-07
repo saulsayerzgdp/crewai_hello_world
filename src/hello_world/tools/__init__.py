@@ -1,3 +1,3 @@
-from .custom_tool import HelloWorldTool
+from .weather_tool import WeatherForecastTool
 
-__all__ = ['HelloWorldTool']
+__all__ = ['WeatherForecastTool']
