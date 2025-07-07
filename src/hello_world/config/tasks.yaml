@@ -1,27 +1,9 @@
-web_search_task:
-  description: >
-    Use the Serper tool to search the web for up-to-date information related to the user's query: {query}.
-  expected_output: >
-    A list of relevant facts, news, or web results.
-  agent: web_search_agent
-
-information_compiler_task:
-  description: >
-    Compile and synthesize information from the web search and other sources into a structured, easy-to-read summary about: {query}
-  expected_output: >
-    A synthesized summary or report combining all relevant findings.
-  agent: information_compiler_agent
-  dependencies:
-    - web_search_task
-
 research_task:
   description: >
-    Review the outputs from the Web Search Agent and the Information Compiler Agent regarding: {query}.
-    Synthesize all findings into a single, comprehensive, and well-structured answer for the user.
-    Do NOT describe your process or what you plan to do—just present the final answer as if you are directly answering the user's question.
+    Use the Serper tool to find the most relevant and recent articles on the topic: {topic}. Return up to {num_of_items} articles, including direct links and concise summaries with citations.
   expected_output: >
-    A concise, actionable, and well-structured answer for the user, based on all available findings.
+    A concise, well-cited list of up to {num_of_items} relevant articles or web results, each with a markdown link, brief summary, and citation.
   agent: research_agent
-  dependencies:
-    - web_search_task
-    - information_compiler_task
+  inputs:
+    - topic
+    - num_of_items

@@ -1073,10 +1073,14 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "crewai", extra = ["tools"] },
+    { name = "crewai-tools" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "crewai", extras = ["tools"], specifier = ">=0.140.0,<1.0.0" }]
+requires-dist = [
+    { name = "crewai", extras = ["tools"], specifier = ">=0.140.0,<1.0.0" },
+    { name = "crewai-tools", specifier = ">=0.49.0,<0.50.0" },
+]
 
 [[package]]
 name = "hf-xet"

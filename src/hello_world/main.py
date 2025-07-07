@@ -20,6 +20,7 @@ def run():
     inputs = {
         'name': 'Petry',
         'topic': 'AI LLMs',
+        'num_of_items': 5
     }
 
     try:
