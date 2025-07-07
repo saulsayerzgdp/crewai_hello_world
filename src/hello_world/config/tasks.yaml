@@ -1,6 +1,12 @@
 hello_world_task:
   description: >
-    Say hello to the world or to a specific person if a name is provided.
+    Greet the user.greet them using their name (e.g., "Hello John!").
+    Keep the tone friendly and brief.
+    Do not perform any other tasks. The name is {name}
   expected_output: >
-    A cheerful greeting, e.g., "Hello, World!" or "Hello, {name}!"
+    - If no name is provided: "Hi there! What's your name?"
+    - If a name is provided: "Hello {name}!"
   agent: hello_world_agent
+  variables:
+    - name: name
+      description: The user's name, if provided.

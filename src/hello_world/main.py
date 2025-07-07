@@ -21,8 +21,7 @@ def run():
         'name': 'Petry',
         'topic': 'AI LLMs',
     }
-    
-    print(inputs)
+
     try:
         HelloWorld().crew().kickoff(inputs=inputs)
     except Exception as e:
